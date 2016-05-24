@@ -3,6 +3,10 @@ class Scraper::CamdenTuscanyScraper < Scraper
 
   private
 
+  def self.building_name
+    "Camden Tuscany"
+  end
+
   def self.page
     Nokogiri::HTML(open(LISTINGS_URL))
   end

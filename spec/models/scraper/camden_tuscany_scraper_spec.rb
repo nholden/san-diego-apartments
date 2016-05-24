@@ -8,6 +8,7 @@ RSpec.describe Unit, type: :model do
     When(:listings) { Scraper::CamdenTuscanyScraper.listings }
     Then { listings.length == 5 }
     And { listings.first.class == ScrapedListing }
+    And { listings.first.building_name == "Camden Tuscany" }
     And { listings.first.unit_name == "410" }
     And { listings.first.rent == 2479 } 
     And { listings.first.available == Date.new(2016,07,02) }

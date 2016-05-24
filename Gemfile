@@ -12,7 +12,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'pry'
 gem 'rspec-rails'
+gem 'rspec-given'
 gem 'factory_girl_rails'
+gem 'nokogiri'
+gem 'webmock'
 
 group :development do
   gem 'web-console', '~> 2.0'

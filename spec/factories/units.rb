@@ -4,6 +4,5 @@ FactoryGirl.define do
     washer_dryer false
     patio false
     beds 1
-    rent 1
   end
 end

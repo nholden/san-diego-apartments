@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
 gem 'rails', '4.2.5.1'
 gem 'pg'
@@ -16,6 +17,8 @@ gem 'rspec-given'
 gem 'factory_girl_rails'
 gem 'nokogiri'
 gem 'webmock'
+gem 'rails_12factor'
+gem 'puma'
 
 group :development do
   gem 'web-console', '~> 2.0'

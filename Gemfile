@@ -18,6 +18,7 @@ gem 'factory_girl_rails'
 gem 'nokogiri'
 gem 'webmock'
 gem 'puma'
+gem 'bourbon', '~> 5.0.0.beta.5'
 
 group :development do
   gem 'web-console', '~> 2.0'

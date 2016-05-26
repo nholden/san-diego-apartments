@@ -1,0 +1,901 @@
+{
+  "results": {
+    "availableFloorPlanTypes": [
+      {
+        "availableFloorPlans": [
+          {
+            "finishPackages": [
+              {
+                "apartments": [
+                  {
+                    "apartmentCode": "CA060-CA060-001-505",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "505",
+                    "apartmentAddress": "1399 Ninth Avenue # 505",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1565,
+                      "effectiveRent": 1565,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-505",
+                    "floor": 5
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-606",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "606",
+                    "apartmentAddress": "1399 Ninth Avenue # 606",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1565,
+                      "effectiveRent": 1565,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-606",
+                    "floor": 6
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-905",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "905",
+                    "apartmentAddress": "1399 Ninth Avenue # 905",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1565,
+                      "effectiveRent": 1565,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-905",
+                    "floor": 9
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-1005",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "1005",
+                    "apartmentAddress": "1399 Ninth Avenue # 1005",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1565,
+                      "effectiveRent": 1565,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-1005",
+                    "floor": 10
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-1113",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "1113",
+                    "apartmentAddress": "1399 Ninth Avenue # 1113",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1565,
+                      "effectiveRent": 1565,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-1113",
+                    "floor": 11
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-1216",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "1216",
+                    "apartmentAddress": "1399 Ninth Avenue # 1216",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1565,
+                      "effectiveRent": 1565,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-1216",
+                    "floor": 12
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-620",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "620",
+                    "apartmentAddress": "1399 Ninth Avenue # 620",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1600,
+                      "effectiveRent": 1600,
+                      "availableDate": "/Date(1465948800000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-620",
+                    "floor": 6
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-820",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "820",
+                    "apartmentAddress": "1399 Ninth Avenue # 820",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1595,
+                      "effectiveRent": 1595,
+                      "availableDate": "/Date(1468108800000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 570,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-820",
+                    "floor": 8
+                  }
+                ],
+                "finishPackageId": "",
+                "finishPackageName": "",
+                "finishPackageDescription": "",
+                "finishPackageImage": ""
+              }
+            ],
+            "floorPlanId": "248",
+            "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-S1.gif",
+            "promotionList": null,
+            "floorPlanSizeRange": {
+              "minSize": 570,
+              "maxSize": 570,
+              "floorPlanName": "S1"
+            },
+            "floorPlanFeatures": [],
+            "id": "",
+            "communityCode": "CA060",
+            "floorPlanType": "Studio",
+            "floorPlanBathType": "1 bath",
+            "floorPlanName": "S1",
+            "image": "",
+            "estimatedSize": 570,
+            "features": [],
+            "apartments": null,
+            "internalNotes": "",
+            "modifiedBy": "",
+            "isDeleted": false,
+            "sizeRange": null
+          }
+        ],
+        "floorPlanTypeCode": "0BD",
+        "value": 0,
+        "display": "Studio",
+        "displayOrder": 0
+      },
+      {
+        "availableFloorPlans": [
+          {
+            "finishPackages": [
+              {
+                "apartments": [
+                  {
+                    "apartmentCode": "CA060-CA060-001-704",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "704",
+                    "apartmentAddress": "1399 Ninth Avenue # 704",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1905,
+                      "effectiveRent": 1905,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-704",
+                    "floor": 7
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-904",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "904",
+                    "apartmentAddress": "1399 Ninth Avenue # 904",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1905,
+                      "effectiveRent": 1905,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-904",
+                    "floor": 9
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-107",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "107",
+                    "apartmentAddress": "1399 Ninth Avenue # 107",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1730,
+                      "effectiveRent": 1730,
+                      "availableDate": "/Date(1465257600000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-107",
+                    "floor": 1
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-1018",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "1018",
+                    "apartmentAddress": "1399 Ninth Avenue # 1018",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1975,
+                      "effectiveRent": 1975,
+                      "availableDate": "/Date(1465430400000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-1018",
+                    "floor": 10
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-703",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "703",
+                    "apartmentAddress": "1399 Ninth Avenue # 703",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1970,
+                      "effectiveRent": 1970,
+                      "availableDate": "/Date(1465862400000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-703",
+                    "floor": 7
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-718",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "718",
+                    "apartmentAddress": "1399 Ninth Avenue # 718",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1975,
+                      "effectiveRent": 1975,
+                      "availableDate": "/Date(1466812800000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-718",
+                    "floor": 7
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-1214",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "1214",
+                    "apartmentAddress": "1399 Ninth Avenue # 1214",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 1975,
+                      "effectiveRent": 1975,
+                      "availableDate": "/Date(1467504000000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-1214",
+                    "floor": 12
+                  }
+                ],
+                "finishPackageId": "",
+                "finishPackageName": "",
+                "finishPackageDescription": "",
+                "finishPackageImage": ""
+              }
+            ],
+            "floorPlanId": "247",
+            "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-A1.gif",
+            "promotionList": null,
+            "floorPlanSizeRange": {
+              "minSize": 750,
+              "maxSize": 750,
+              "floorPlanName": "A1"
+            },
+            "floorPlanFeatures": [],
+            "id": "",
+            "communityCode": "CA060",
+            "floorPlanType": "1 bedroom",
+            "floorPlanBathType": "1 bath",
+            "floorPlanName": "A1",
+            "image": "",
+            "estimatedSize": 750,
+            "features": [],
+            "apartments": null,
+            "internalNotes": "",
+            "modifiedBy": "",
+            "isDeleted": false,
+            "sizeRange": null
+          },
+          {
+            "finishPackages": [
+              {
+                "apartments": [
+                  {
+                    "apartmentCode": "CA060-CA060-001-1507",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "1507",
+                    "apartmentAddress": "1399 Ninth Avenue # 1507",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2030,
+                      "effectiveRent": 2030,
+                      "availableDate": "/Date(1467763200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-1507",
+                    "floor": 15
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-1417",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "1417",
+                    "apartmentAddress": "1399 Ninth Avenue # 1417",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2025,
+                      "effectiveRent": 2025,
+                      "availableDate": "/Date(1469232000000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 750,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-1417",
+                    "floor": 14
+                  }
+                ],
+                "finishPackageId": "",
+                "finishPackageName": "",
+                "finishPackageDescription": "",
+                "finishPackageImage": ""
+              }
+            ],
+            "floorPlanId": "253",
+            "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-A1P.gif",
+            "promotionList": null,
+            "floorPlanSizeRange": {
+              "minSize": 750,
+              "maxSize": 750,
+              "floorPlanName": "A1P"
+            },
+            "floorPlanFeatures": [],
+            "id": "",
+            "communityCode": "CA060",
+            "floorPlanType": "1 bedroom",
+            "floorPlanBathType": "1 bath",
+            "floorPlanName": "A1P",
+            "image": "",
+            "estimatedSize": 750,
+            "features": [],
+            "apartments": null,
+            "internalNotes": "",
+            "modifiedBy": "",
+            "isDeleted": false,
+            "sizeRange": null
+          },
+          {
+            "finishPackages": [
+              {
+                "apartments": [
+                  {
+                    "apartmentCode": "CA060-CA060-001-111",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "111",
+                    "apartmentAddress": "1399 Ninth Avenue # 111",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2145,
+                      "effectiveRent": 2145,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 868,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-111",
+                    "floor": 1
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-211",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "211",
+                    "apartmentAddress": "1399 Ninth Avenue # 211",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2150,
+                      "effectiveRent": 2150,
+                      "availableDate": "/Date(1467158400000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 868,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-211",
+                    "floor": 2
+                  }
+                ],
+                "finishPackageId": "",
+                "finishPackageName": "",
+                "finishPackageDescription": "",
+                "finishPackageImage": ""
+              }
+            ],
+            "floorPlanId": "251",
+            "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-A3.jpg",
+            "promotionList": null,
+            "floorPlanSizeRange": {
+              "minSize": 868,
+              "maxSize": 868,
+              "floorPlanName": "A3"
+            },
+            "floorPlanFeatures": [],
+            "id": "",
+            "communityCode": "CA060",
+            "floorPlanType": "1 bedroom",
+            "floorPlanBathType": "1 bath",
+            "floorPlanName": "A3",
+            "image": "",
+            "estimatedSize": 868,
+            "features": [],
+            "apartments": null,
+            "internalNotes": "",
+            "modifiedBy": "",
+            "isDeleted": false,
+            "sizeRange": null
+          }
+        ],
+        "floorPlanTypeCode": "1BD",
+        "value": 1,
+        "display": "1 bedroom",
+        "displayOrder": 1
+      },
+      {
+        "availableFloorPlans": [
+          {
+            "finishPackages": [
+              {
+                "apartments": [
+                  {
+                    "apartmentCode": "CA060-CA060-001-702",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "702",
+                    "apartmentAddress": "1399 Ninth Avenue # 702",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2400,
+                      "effectiveRent": 2400,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 1025,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-702",
+                    "floor": 7
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-811",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "811",
+                    "apartmentAddress": "1399 Ninth Avenue # 811",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2495,
+                      "effectiveRent": 2495,
+                      "availableDate": "/Date(1465430400000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 1025,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-811",
+                    "floor": 8
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-711",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "711",
+                    "apartmentAddress": "1399 Ninth Avenue # 711",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2500,
+                      "effectiveRent": 2500,
+                      "availableDate": "/Date(1465776000000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 1025,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-711",
+                    "floor": 7
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-610",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "610",
+                    "apartmentAddress": "1399 Ninth Avenue # 610",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2505,
+                      "effectiveRent": 2505,
+                      "availableDate": "/Date(1467936000000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 1025,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-610",
+                    "floor": 6
+                  },
+                  {
+                    "apartmentCode": "CA060-CA060-001-721",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "721",
+                    "apartmentAddress": "1399 Ninth Avenue # 721",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2515,
+                      "effectiveRent": 2515,
+                      "availableDate": "/Date(1469145600000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 1025,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-721",
+                    "floor": 7
+                  }
+                ],
+                "finishPackageId": "",
+                "finishPackageName": "",
+                "finishPackageDescription": "",
+                "finishPackageImage": ""
+              }
+            ],
+            "floorPlanId": "246",
+            "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-B1.gif",
+            "promotionList": null,
+            "floorPlanSizeRange": {
+              "minSize": 1025,
+              "maxSize": 1025,
+              "floorPlanName": "B1"
+            },
+            "floorPlanFeatures": [],
+            "id": "",
+            "communityCode": "CA060",
+            "floorPlanType": "2 bedrooms",
+            "floorPlanBathType": "2 baths",
+            "floorPlanName": "B1",
+            "image": "",
+            "estimatedSize": 1025,
+            "features": [],
+            "apartments": null,
+            "internalNotes": "",
+            "modifiedBy": "",
+            "isDeleted": false,
+            "sizeRange": null
+          },
+          {
+            "finishPackages": [
+              {
+                "apartments": [
+                  {
+                    "apartmentCode": "CA060-CA060-001-110",
+                    "communityCode": "CA060",
+                    "subCommunityCode": null,
+                    "buildingNumber": "001",
+                    "apartmentNumber": "110",
+                    "apartmentAddress": "1399 Ninth Avenue # 110",
+                    "floorPlan": null,
+                    "pricing": {
+                      "amenitizedRent": 2405,
+                      "effectiveRent": 2405,
+                      "availableDate": "/Date(1464307200000)/",
+                      "showAsAvailable": true,
+                      "unavailableMessage": null,
+                      "leaseTerms": null
+                    },
+                    "hasPromotion": false,
+                    "promotionList": [],
+                    "amenityList": null,
+                    "finishPackage": null,
+                    "apartmentSize": 1059,
+                    "onlineApplicationUrl": "",
+                    "unitKey": "CA060-CA060-001-110",
+                    "floor": 1
+                  }
+                ],
+                "finishPackageId": "",
+                "finishPackageName": "",
+                "finishPackageDescription": "",
+                "finishPackageImage": ""
+              }
+            ],
+            "floorPlanId": "250",
+            "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-B2.jpg",
+            "promotionList": null,
+            "floorPlanSizeRange": {
+              "minSize": 1059,
+              "maxSize": 1059,
+              "floorPlanName": "B2"
+            },
+            "floorPlanFeatures": [],
+            "id": "",
+            "communityCode": "CA060",
+            "floorPlanType": "2 bedrooms",
+            "floorPlanBathType": "2 baths",
+            "floorPlanName": "B2",
+            "image": "",
+            "estimatedSize": 1059,
+            "features": [],
+            "apartments": null,
+            "internalNotes": "",
+            "modifiedBy": "",
+            "isDeleted": false,
+            "sizeRange": null
+          }
+        ],
+        "floorPlanTypeCode": "2BD",
+        "value": 2,
+        "display": "2 bedrooms",
+        "displayOrder": 2
+      }
+    ],
+    "unavailableFloorPlans": [
+      {
+        "floorPlanId": "254",
+        "floorPlanName": "S1P",
+        "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-S1P.gif",
+        "floorPlanType": "0BD",
+        "floorPlanSizeRange": {
+          "minSize": 570,
+          "maxSize": 570,
+          "floorPlanName": "S1P"
+        },
+        "floorPlanFeatures": [],
+        "floorPlanBathType": "1 bath"
+      },
+      {
+        "floorPlanId": "249",
+        "floorPlanName": "A2",
+        "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-A2(1)(1).gif",
+        "floorPlanType": "1BD",
+        "floorPlanSizeRange": {
+          "minSize": 730,
+          "maxSize": 730,
+          "floorPlanName": "A2"
+        },
+        "floorPlanFeatures": [],
+        "floorPlanBathType": "1 bath"
+      },
+      {
+        "floorPlanId": "252",
+        "floorPlanName": "B1P",
+        "floorPlanImage": "https://resource.avalonbay.com/floorplans/CA060/CA060-B1P.gif",
+        "floorPlanType": "2BD",
+        "floorPlanSizeRange": {
+          "minSize": 1025,
+          "maxSize": 1025,
+          "floorPlanName": "B1P"
+        },
+        "floorPlanFeatures": [],
+        "floorPlanBathType": "2 baths"
+      }
+    ]
+  },
+  "responseStatus": null
+}

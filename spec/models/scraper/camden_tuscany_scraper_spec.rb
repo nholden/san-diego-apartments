@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Unit, type: :model do
+RSpec.describe Scraper::CamdenTuscanyScraper, type: :model do
   SAMPLE_PAGE = File.open('./spec/pages/camden_tuscany.html', 'r')
 
   describe ".scrape" do

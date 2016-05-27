@@ -7,8 +7,7 @@
     <th>Lease (months)</th>
     <th>Beds</th>
     <th>Sq. ft.</th>
-    <th>First seen</th>
-    <th>Last seen</th>
+    <th>Seen</th>
   </tr>
   <% @units.each do |unit| %>
     <tr>
@@ -19,8 +18,10 @@
       <td><%= unit.lease_months %></td>
       <td><%= unit.beds %></td>
       <td><%= unit.square_feet %></td>
-      <td><%= unit.first_seen.strftime("%B %-d") %></td>
-      <td><%= time_ago_in_words(unit.last_seen) %> ago</td>
+      <td>
+        <%= time_ago_in_words(unit.first_seen) %> ago to 
+        <%= time_ago_in_words(unit.last_seen) %> ago
+      </td>
     </tr>
   <% end %>
 </table>

@@ -19,6 +19,10 @@ class Unit < ActiveRecord::Base
     listings.last.lease_months
   end
 
+  def first_seen
+    listings.first.created_at
+  end
+
   def last_seen
     listings.last.created_at
   end

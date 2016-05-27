@@ -42,10 +42,13 @@ RSpec.describe Unit, type: :model do
     Then { unit.lease_months == lease_months }
   end
 
-  describe "#last_seen" do
-    Given(:created_at) { DateTime.new(2015,10,11,12,13,14) }
-    Given(:unit) { FactoryGirl.create(:unit, listings: [listing]) }
-    Given(:listing) { FactoryGirl.create(:listing, created_at: created_at) }
-    Then { unit.last_seen == created_at }
+  describe "#first_seen and #last_seen" do
+    Given(:first_created_at) { DateTime.new(2015,10,11,12,13,14) }
+    Given(:last_created_at) { DateTime.new(2015,05,17,18,19,20) }
+    Given(:unit) { FactoryGirl.create(:unit, listings: [first_listing, last_listing]) }
+    Given(:first_listing) { FactoryGirl.create(:listing, created_at: first_created_at) }
+    Given(:last_listing) { FactoryGirl.create(:listing, created_at: last_created_at) }
+    Then { unit.first_seen == first_created_at }
+    And { unit.last_seen == last_created_at }
   end
 end

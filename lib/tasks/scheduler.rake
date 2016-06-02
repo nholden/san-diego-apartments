@@ -32,3 +32,10 @@ task :clean_listings => :environment do
     puts "Done cleaning. #{unit.listings.count} listings remaining for #{unit.building.name} unit #{unit.name}."
   end
 end
+
+task :delete_scraped_listings => :environment do
+  puts "Deleting #{ScrapedListing.count} scraped listings."
+  worker = DeleteScrapedListingsWorker.new
+  worker.perform
+  puts "Done deleting. #{ScrapedListing.count} scraped listings remaining."
+end

@@ -23,3 +23,12 @@ task :scrape_ava_cortez_hill => :environment do
   end
   puts "Done running workers on Ava Cortez Hill listings."
 end
+
+task :clean_listings => :environment do
+  Unit.all.each do |unit|
+    puts "Cleaning #{listings.count} listings for #{unit.building.name} unit #{unit.name}."
+    worker = CleanListingsWorker.new
+    worker.perform(unit.id)
+    puts "Done cleaning. #{listings.count} listings remaining for #{unit.building.name} unit #{unit.name}."
+  end
+end

@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe CleanListingsWorker do
   describe ".perform" do
     Given(:worker) { CleanListingsWorker.new }
-    Given(:unit) { FactoryGirl.create(:unit, listings: listings) }
+    Given(:building) { FactoryGirl.create(:building) }
+    Given(:unit) { FactoryGirl.create(:unit, building: building, listings: listings) }
 
     context "when the unit has many listings with no rent change" do
       Given(:listings) { (0..23).to_a.reverse.map { |n| FactoryGirl.create(:listing, created_at: n.hours.ago, rent: rent) } }

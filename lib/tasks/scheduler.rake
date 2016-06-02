@@ -26,9 +26,9 @@ end
 
 task :clean_listings => :environment do
   Unit.all.each do |unit|
-    puts "Cleaning #{listings.count} listings for #{unit.building.name} unit #{unit.name}."
+    puts "Cleaning #{unit.listings.count} listings for #{unit.building.name} unit #{unit.name}."
     worker = CleanListingsWorker.new
     worker.perform(unit.id)
-    puts "Done cleaning. #{listings.count} listings remaining for #{unit.building.name} unit #{unit.name}."
+    puts "Done cleaning. #{unit.listings.count} listings remaining for #{unit.building.name} unit #{unit.name}."
   end
 end

@@ -41,5 +41,21 @@ RSpec.describe Listing, type: :model do
         Then { expect{ listing.save_with_alerts }.to change{ AvailableAlert.count }.by(0) }
       end
     end
+
+    describe "new unit alerts" do
+      Given(:unit) { FactoryGirl.create(:unit, listings: existing_listings ) }
+      Given(:listing) { FactoryGirl.build(:listing, unit: unit) }
+
+      context "when listing is for a new unit" do
+        Given(:existing_listings) { [] }
+        When { listing.save_with_alerts }
+        Then { NewUnitAlert.last.unit_id == unit.id }
+      end
+
+      context "when listing is for an exisiting unit" do
+        Given(:existing_listings) { [FactoryGirl.create(:listing)] }
+        Then { expect{ listing.save_with_alerts }.to change{ NewUnitAlert.count }.by(0) }
+      end
+    end
   end
 end

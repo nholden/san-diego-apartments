@@ -51,4 +51,18 @@ RSpec.describe Unit, type: :model do
     Then { unit.first_seen == first_created_at }
     And { unit.last_seen == last_created_at }
   end
+
+  describe "#new?" do
+    Given(:unit) { FactoryGirl.create(:unit, listings: existing_listings) }
+
+    context "when the unit has no listings" do
+      Given(:existing_listings) { [] }
+      Then { unit.new? == true }
+    end
+
+    context "when the unit has a listing" do
+      Given(:existing_listings) { [FactoryGirl.create(:listing)] }
+      Then { unit.new? == false }
+    end
+  end
 end

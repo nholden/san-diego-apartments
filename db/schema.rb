@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604184045) do
+ActiveRecord::Schema.define(version: 20160604191814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "available_alerts", force: :cascade do |t|
+    t.date     "old_value"
+    t.date     "new_value"
+    t.integer  "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "available_alerts", ["unit_id"], name: "index_available_alerts_on_unit_id", using: :btree
 
   create_table "buildings", force: :cascade do |t|
     t.string   "name"

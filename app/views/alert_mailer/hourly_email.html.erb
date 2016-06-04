@@ -1,0 +1,52 @@
+<p>Hi <%= @recipient.first_name %>,</p>
+<p>Here are the most recent updates I have for you:</p>
+
+<% if @new_units.present? %> 
+  <h2>New units</h2>
+  <% @new_units.each do |unit| %>
+    <div class="unit">
+      <h3><%= unit.building_name %> unit <%= unit.name %></h3>
+      <ul>
+        <li>Rent: <%= number_to_currency(unit.rent, precision: 0) %></li>
+        <li>Available: <%= unit.available.strftime("%B %-d") %></li>
+        <li>Lease: <%= unit.lease_months %> months</li>
+        <li>Beds: <%= unit.beds %></li>
+        <li>Square feet: <%= unit.square_feet %></li>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @rent_changed_units.present? %> 
+  <h2>Rent changed</h2>
+  <% @rent_changed_units.each do |unit| %>
+    <div class="unit">
+      <h3><%= unit.building.name %> unit <%= unit.name %></h3>
+      <ul>
+        <li>Rent: <%= number_to_currency(unit.rent, precision: 0) %> (was <%= number_to_currency(unit.rent_alerts.last.old_value, precision: 0) %>)</li>
+        <li>Available: <%= unit.available.strftime("%B %-d") %></li>
+        <li>Lease: <%= unit.lease_months %> months</li>
+        <li>Beds: <%= unit.beds %></li>
+        <li>Square feet: <%= unit.square_feet %></li>
+        <li>First seen <%= time_ago_in_words(unit.first_seen) %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @available_changed_units.present? %> 
+  <h2>Available date changed</h2>
+  <% @available_changed_units.each do |unit| %>
+    <div class="unit">
+      <h3><%= unit.building.name %> unit <%= unit.name %></h3>
+      <ul>
+        <li>Available: <%= unit.available.strftime("%B %-d") %> (was <%= unit.available_alerts.last.old_value.strftime("%B %-d") %>)</li>
+        <li>Rent: <%= number_to_currency(unit.rent, precision: 0) %></li>
+        <li>Lease: <%= unit.lease_months %> months</li>
+        <li>Beds: <%= unit.beds %></li>
+        <li>Square feet: <%= unit.square_feet %></li>
+        <li>First seen <%= time_ago_in_words(unit.first_seen) %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

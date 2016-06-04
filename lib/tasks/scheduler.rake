@@ -39,3 +39,15 @@ task :delete_scraped_listings => :environment do
   worker.perform
   puts "Done deleting. #{ScrapedListing.count} scraped listings remaining."
 end
+
+task :send_hourly_alert_mail => :environment do
+  puts "Checking for new alerts."
+  if NewUnitAlert.units_from_last_hour.present? || RentAlert.units_from_last_hour.present? || AvailableAlert.units_from_last_hour.present?
+    puts "Found new alerts. Sending emails."
+    Recipient.all.each do |recipient|
+      AlertMailer.hourly_email(recipient).deliver_now
+    end
+  else
+    puts "Found no new alerts. Not sending emails."
+  end
+end

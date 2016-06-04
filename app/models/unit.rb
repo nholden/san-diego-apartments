@@ -1,7 +1,7 @@
 class Unit < ActiveRecord::Base
   belongs_to :building
   has_many :listings
-  has_many :price_alerts
+  has_many :rent_alerts
   has_many :available_alerts
   has_many :new_unit_alert
 

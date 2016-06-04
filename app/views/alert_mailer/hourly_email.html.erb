@@ -28,7 +28,7 @@
         <li>Lease: <%= unit.lease_months %> months</li>
         <li>Beds: <%= unit.beds %></li>
         <li>Square feet: <%= unit.square_feet %></li>
-        <li>First seen <%= time_ago_in_words(unit.first_seen) %>
+        <li>First seen <%= time_ago_in_words(unit.first_seen) ago %>
       </ul>
     </div>
   <% end %>
@@ -45,7 +45,7 @@
         <li>Lease: <%= unit.lease_months %> months</li>
         <li>Beds: <%= unit.beds %></li>
         <li>Square feet: <%= unit.square_feet %></li>
-        <li>First seen <%= time_ago_in_words(unit.first_seen) %>
+        <li>First seen <%= time_ago_in_words(unit.first_seen) ago %>
       </ul>
     </div>
   <% end %>

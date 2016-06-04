@@ -1,6 +1,7 @@
 class Unit < ActiveRecord::Base
   belongs_to :building
   has_many :listings
+  has_many :price_alerts
   validates :name, uniqueness: true
 
   def building_name

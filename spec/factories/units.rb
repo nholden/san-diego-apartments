@@ -4,5 +4,6 @@ FactoryGirl.define do
     washer_dryer false
     patio false
     beds 1
+    building_id 1
   end
 end

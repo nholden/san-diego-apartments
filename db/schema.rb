@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524233418) do
+ActiveRecord::Schema.define(version: 20160604184045) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "buildings", force: :cascade do |t|
     t.string   "name"
@@ -34,7 +37,17 @@ ActiveRecord::Schema.define(version: 20160524233418) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "listings", ["unit_id"], name: "index_listings_on_unit_id"
+  add_index "listings", ["unit_id"], name: "index_listings_on_unit_id", using: :btree
+
+  create_table "rent_alerts", force: :cascade do |t|
+    t.integer  "old_value"
+    t.integer  "new_value"
+    t.integer  "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "rent_alerts", ["unit_id"], name: "index_rent_alerts_on_unit_id", using: :btree
 
   create_table "scraped_listings", force: :cascade do |t|
     t.string   "unit_name"
@@ -59,6 +72,6 @@ ActiveRecord::Schema.define(version: 20160524233418) do
     t.integer  "square_feet"
   end
 
-  add_index "units", ["building_id"], name: "index_units_on_building_id"
+  add_index "units", ["building_id"], name: "index_units_on_building_id", using: :btree
 
 end

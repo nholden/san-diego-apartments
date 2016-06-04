@@ -6,7 +6,7 @@ module Alert
     def units_from_last_hour
       units = []
       
-      self.where("created_at ?=", 1.hour.ago).each do |alert|
+      self.where("created_at = ?", 1.hour.ago).each do |alert|
         units.push(alert.unit) if alert.present?
       end
 

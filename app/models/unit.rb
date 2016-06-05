@@ -7,20 +7,20 @@ class Unit < ActiveRecord::Base
 
   validates :name, uniqueness: true
 
+  def self.create_with_alerts(attributes)
+    unit = create(attributes)
+    NewUnitAlert.create(unit_id: unit.id)
+    unit
+  end
+
+  def save_with_alerts
+    RentAlert.create(unit_id: id, old_value: rent_was, new_value: rent) if rent_changed?
+    AvailableAlert.create(unit_id: id, old_value: available_was, new_value: available) if available_changed?
+    save
+  end
+
   def building_name
     building.name
-  end
-
-  def rent
-    listings.last.rent
-  end
-
-  def available
-    listings.last.available
-  end
-
-  def lease_months
-    listings.last.lease_months
   end
 
   def first_seen
@@ -29,9 +29,5 @@ class Unit < ActiveRecord::Base
 
   def last_seen
     listings.last.created_at
-  end
-
-  def new?
-    listings.blank?
   end
 end

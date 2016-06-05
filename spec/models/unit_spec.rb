@@ -21,27 +21,6 @@ RSpec.describe Unit, type: :model do
     Then { unit.building_name == building_name }
   end
 
-  describe "#rent" do
-    Given(:rent) { 1675 }
-    Given(:unit) { FactoryGirl.create(:unit, listings: [listing]) }
-    Given(:listing) { FactoryGirl.create(:listing, rent: rent) }
-    Then { unit.rent == rent }
-  end
-
-  describe "#available" do
-    Given(:available) { Date.new(2016,10,11) }
-    Given(:unit) { FactoryGirl.create(:unit, listings: [listing]) }
-    Given(:listing) { FactoryGirl.create(:listing, available: available) }
-    Then { unit.available == available }
-  end
-
-  describe "#lease_months" do
-    Given(:lease_months) { 12 }
-    Given(:unit) { FactoryGirl.create(:unit, listings: [listing]) }
-    Given(:listing) { FactoryGirl.create(:listing, lease_months: lease_months) }
-    Then { unit.lease_months == lease_months }
-  end
-
   describe "#first_seen and #last_seen" do
     Given(:first_created_at) { DateTime.new(2015,10,11,12,13,14) }
     Given(:last_created_at) { DateTime.new(2015,05,17,18,19,20) }
@@ -52,17 +31,55 @@ RSpec.describe Unit, type: :model do
     And { unit.last_seen == last_created_at }
   end
 
-  describe "#new?" do
-    Given(:unit) { FactoryGirl.create(:unit, listings: existing_listings) }
+  describe "#save_with_alerts" do
+    describe "rent alerts" do
+      Given(:unit) { FactoryGirl.create(:unit, rent: old_rent) }
+      Given(:old_rent) { 100 }
+      When { unit.rent = new_rent }
 
-    context "when the unit has no listings" do
-      Given(:existing_listings) { [] }
-      Then { unit.new? == true }
+      context "when rent changed" do
+        When(:new_rent) { old_rent + 100 }
+        When { unit.save_with_alerts }
+        Then { RentAlert.last.unit_id == unit.id }
+        And { RentAlert.last.old_value == old_rent }
+        And { RentAlert.last.new_value == new_rent }
+      end
+
+      context "when rent didn't change" do
+        When(:new_rent) { old_rent }
+        Then { expect{ unit.save_with_alerts }.to change{ RentAlert.count }.by(0) }
+      end
     end
 
-    context "when the unit has a listing" do
-      Given(:existing_listings) { [FactoryGirl.create(:listing)] }
-      Then { unit.new? == false }
+    describe "available alerts" do
+      Given(:unit) { FactoryGirl.create(:unit, available: old_available) }
+      Given(:old_available) { Date.new(2016, 9, 1) }
+      When { unit.available = new_available }
+
+      context "when available date changed" do
+        When(:new_available) { old_available.advance(months: 1) }
+        When { unit.save_with_alerts }
+        Then { AvailableAlert.last.unit_id == unit.id }
+        And { AvailableAlert.last.old_value == old_available }
+        And { AvailableAlert.last.new_value == new_available }
+      end
+
+      context "when available date didn't change" do
+        When(:new_available) { old_available }
+        Then { expect{ unit.save_with_alerts }.to change{ AvailableAlert.count }.by(0) }
+      end
+    end
+  end
+
+  describe ".create_with_alerts" do
+    Given(:attributes) { FactoryGirl.attributes_for(:unit) }
+
+    describe "creates a new unit" do
+      Then { expect{ Unit.create_with_alerts(attributes) }.to change{ Unit.count }.by(1) }
+    end
+
+    describe "creates a new NewUnitAlert" do
+      Then { expect{ Unit.create_with_alerts(attributes) }.to change{ NewUnitAlert.count }.by(1) }
     end
   end
 end

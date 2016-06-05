@@ -9,7 +9,7 @@ class Unit < ActiveRecord::Base
     unit = Unit.where(name: attributes[:name], building_id: attributes[:building_id]).last
     if unit.present?
       unit.assign_attributes(attributes)
-      unit.changed? ? unit.save_with_alerts : unit
+      unit.save_with_alerts if unit.changed?
     else
       unit = create(attributes)
       NewUnitAlert.create(unit_id: unit.id)

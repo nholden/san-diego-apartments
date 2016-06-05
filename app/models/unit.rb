@@ -3,7 +3,7 @@ class Unit < ActiveRecord::Base
   has_many :listings
   has_many :rent_alerts
   has_many :available_alerts
-  has_many :new_unit_alert
+  has_many :new_unit_alerts
 
   validates :name, uniqueness: true
 

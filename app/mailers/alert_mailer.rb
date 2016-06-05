@@ -13,7 +13,7 @@ class AlertMailer < ApplicationMailer
     updated_elements = []
     updated_elements.push(pluralize(@new_units.length, "new unit")) if @new_units.present?
     updated_elements.push(pluralize(@rent_changed_units.length, "updated rent")) if @rent_changed_units.present?
-    updated_elements.push(pluralize(@available_changed_units.length, "date")) if @available_changed_units.present?
+    updated_elements.push(pluralize(@available_changed_units.length, "updated availability date")) if @available_changed_units.present?
     subject = "Your recent San Diego updates (" + updated_elements.join(", ") + ")"
 
     mail(to: email_with_name, subject: subject)

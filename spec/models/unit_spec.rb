@@ -1,19 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Unit, type: :model do
-  describe "unique name validation" do
-    Given(:name) { "1301" }
-
-    context "when a building with that name exists" do
-      Given { FactoryGirl.create(:unit, name: name) }
-      Then { Unit.new(name: name).valid? == false }
-    end
-
-    context "when a building with that name doesn't exist" do
-      Then { Unit.new(name: name).valid? == true }
-    end
-  end
-
   describe "#building_name" do
     Given(:building_name) { "Warren Towers" }
     Given(:building) { FactoryGirl.create(:building, name: building_name) }
@@ -71,15 +58,37 @@ RSpec.describe Unit, type: :model do
     end
   end
 
-  describe ".create_with_alerts" do
+  describe ".update_or_create_by_with_alerts" do
     Given(:attributes) { FactoryGirl.attributes_for(:unit) }
 
-    describe "creates a new unit" do
-      Then { expect{ Unit.create_with_alerts(attributes) }.to change{ Unit.count }.by(1) }
+    context "when the unit exists" do
+      When(:unit) { FactoryGirl.create(:unit, attributes) }
+
+      describe "it doesn't create a new unit" do
+        Then { expect{ Unit.update_or_create_by_with_alerts(attributes) }.to change{ Unit.count }.by(0) }
+      end
+
+      describe "it returns the unit" do
+        Then { Unit.update_or_create_by_with_alerts(attributes) == unit }
+      end
+
+      describe "it does not create a NewUnitAlert" do
+        Then { expect{ Unit.update_or_create_by_with_alerts(attributes) }.to change{ NewUnitAlert.count }.by(0) }
+      end
     end
 
-    describe "creates a new NewUnitAlert" do
-      Then { expect{ Unit.create_with_alerts(attributes) }.to change{ NewUnitAlert.count }.by(1) }
+    context "when the unit does not exist" do
+      describe "it creates a new unit" do
+        Then { expect{ Unit.update_or_create_by_with_alerts(attributes) }.to change{ Unit.count }.by(1) }
+      end
+
+      describe "it returns the new unit" do
+        Then { Unit.update_or_create_by_with_alerts(attributes).is_a?(Unit) }
+      end
+
+      describe "it creates a new NewUnitAlert" do
+        Then { expect{ Unit.update_or_create_by_with_alerts(attributes) }.to change{ NewUnitAlert.count }.by(1) }
+      end
     end
   end
 end

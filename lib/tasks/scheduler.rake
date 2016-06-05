@@ -40,7 +40,7 @@ task :delete_scraped_listings => :environment do
   puts "Done deleting. #{ScrapedListing.count} scraped listings remaining."
 end
 
-task :send_hourly_alert_mail => :environment do
+task :send_hourly_alert_email => :environment do
   puts "Checking for new alerts."
   if NewUnitAlert.units_from_last_hour.present? || RentAlert.units_from_last_hour.present? || AvailableAlert.units_from_last_hour.present?
     puts "Found new alerts. Sending emails."

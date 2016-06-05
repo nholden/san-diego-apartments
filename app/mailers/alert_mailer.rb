@@ -13,7 +13,7 @@ class AlertMailer < ApplicationMailer
     subject += "#{@new_units.length} new units, " if @new_units.present?
     subject += "#{@rent_changed_units.length} updated rents, " if @rent_changed_units.present?
     subject += "#{@available_changed_units.length} updated available dates, " if @available_changed_units.present?
-    subject.gsub(/, $/, ")")
+    subject.gsub!(/, $/, ")")
 
     mail(to: email_with_name, subject: subject)
   end

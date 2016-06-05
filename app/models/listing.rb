@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  belongs_to :unit
+  belongs_to :unit, touch: true
 
   def save_with_alerts
     if unit.new?

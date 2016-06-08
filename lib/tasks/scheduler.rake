@@ -24,6 +24,19 @@ task :scrape_ava_cortez_hill => :environment do
   puts "Done running workers on Ava Cortez Hill listings."
 end
 
+task :scrape_lofts => :environment do
+  puts "Scraping #{Scraper::LoftsScraper::LISTINGS_URL}..."
+  scraped_listings = Scraper::LoftsScraper.scrape
+  puts "Done scraping the Lofts at 707 Tenth."
+
+  puts "Running NewListingWorkers on scraped Lofts at 707 Tenth listings..."
+  scraped_listings.each do |scraped_listing|
+    worker = NewListingWorker.new
+    worker.perform(scraped_listing.id)
+  end
+  puts "Done running workers on the Lofts at 707 Tenth listings."
+end
+
 task :clean_listings => :environment do
   Unit.all.each do |unit|
     puts "Cleaning #{unit.listings.count} listings for #{unit.building.name} unit #{unit.name}."

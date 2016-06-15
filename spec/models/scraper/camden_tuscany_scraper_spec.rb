@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Scraper::CamdenTuscanyScraper, type: :model do
-  SAMPLE_PAGE = File.open('./spec/pages/camden_tuscany.html', 'r')
-
   describe ".scrape" do
-    Given { stub_request(:get, Scraper::CamdenTuscanyScraper::LISTINGS_URL).to_return(body: SAMPLE_PAGE) }
+    Given(:sample_page) { File.open('./spec/pages/camden_tuscany.html', 'r') }
+    Given { stub_request(:get, Scraper::CamdenTuscanyScraper::LISTINGS_URL).to_return(body: sample_page) }
     When(:scraped_listings) { Scraper::CamdenTuscanyScraper.scrape }
     Then { scraped_listings.length == 5 }
     And { scraped_listings.first.class == ScrapedListing }

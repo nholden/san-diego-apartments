@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Scraper::AvaCortezHillScraper, type: :model do
-  SAMPLE_JSON = File.open('./spec/pages/ava_cortez_hill.json', 'r')
-
   describe ".scrape" do
-    Given { stub_request(:get, Scraper::AvaCortezHillScraper::LISTINGS_URL).to_return(body: SAMPLE_JSON) }
+    Given(:sample_json) { File.open('./spec/pages/ava_cortez_hill.json', 'r') }
+    Given { stub_request(:get, Scraper::AvaCortezHillScraper::LISTINGS_URL).to_return(body: sample_json) }
     When(:scraped_listings) { Scraper::AvaCortezHillScraper.scrape }
     Then { scraped_listings.length == 25 }
     And { scraped_listings.first.class == ScrapedListing }

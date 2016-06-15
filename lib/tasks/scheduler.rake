@@ -37,6 +37,19 @@ task :scrape_lofts => :environment do
   puts "Done running workers on the Lofts at 707 Tenth listings."
 end
 
+task :scrape_market_street_village => :environment do
+  puts "Scraping #{Scraper::MarketStreetVillageScraper::LISTINGS_URL}..."
+  scraped_listings = Scraper::MarketStreetVillageScraper.scrape
+  puts "Done scraping Market Street Village."
+
+  puts "Running NewListingWorkers on scraped Market Street Village listings..."
+  scraped_listings.each do |scraped_listing|
+    worker = NewListingWorker.new
+    worker.perform(scraped_listing.id)
+  end
+  puts "Done running workers on Market Street Village listings."
+end
+
 task :clean_listings => :environment do
   Unit.all.each do |unit|
     puts "Cleaning #{unit.listings.count} listings for #{unit.building.name} unit #{unit.name}."

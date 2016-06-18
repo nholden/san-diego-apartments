@@ -34,4 +34,12 @@ class Unit < ActiveRecord::Base
   def last_seen
     listings.last.created_at
   end
+
+  def recently_seen?
+    last_seen > 1.day.ago
+  end
+
+  def recent_rent_alerts
+    rent_alerts.last(5).reverse
+  end
 end

@@ -91,4 +91,29 @@ RSpec.describe Unit, type: :model do
       end
     end
   end
+
+  describe "#recent_rent_alerts" do
+    Given(:unit) { FactoryGirl.create(:unit, rent_alerts: rent_alerts) }
+    Given(:rent_alerts) { [] }
+    Given(:newest_new_value) { 9999 }
+    Given { 10.times { |n| rent_alerts.push(FactoryGirl.create(:rent_alert)) } }
+    Given { rent_alerts.push(FactoryGirl.create(:rent_alert, new_value: newest_new_value)) }
+    Then { unit.recent_rent_alerts.length == 5 }
+    And { unit.recent_rent_alerts[0].is_a?(RentAlert) }
+    And { unit.recent_rent_alerts[0].new_value == newest_new_value }
+  end
+
+  describe "#recently_seen?" do
+    Given(:unit) { FactoryGirl.create(:unit, listings: listings) }
+
+    context "when the unit was seen today" do
+      Given(:listings) { [FactoryGirl.create(:listing, created_at: DateTime.now)] }
+      Then { unit.recently_seen? }
+    end
+
+    context "when the unit hasn't been seen today" do
+      Given(:listings) { [FactoryGirl.create(:listing, created_at: 2.days.ago)] }
+      Then { !unit.recently_seen? }
+    end
+  end
 end

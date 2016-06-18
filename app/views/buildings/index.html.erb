@@ -1,0 +1,54 @@
+<div class="header">
+  <h1>San Diego apartment listings</h1>
+  <div class="index">
+    <ul>
+      <% @buildings.order(:name).each do |building| %>
+        <li><a href="#building<%= building.id %>"><%= building.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% @buildings.order(:name).each do |building| %>
+  <div class="building">
+    <a name="building<%= building.id %>"></a>
+    <h2><%= building.name %></h2>
+    <% building.units.order(:rent).each do |unit| %>
+      <% if unit.recently_seen? %>
+        <div class="unit">
+          <div class="summary">
+            <div class="rent">
+              <span class="rent-head"><%= number_to_currency(unit.rent, precision: 0) %></span>
+              <span class="rent-sub"><%= unit.lease_months %> mo.</span>
+            </div>
+            <div class="name">
+              Unit <%= unit.name %>
+            </div>
+            <div class="size">
+              <%= unit.beds %> beds | <%= unit.square_feet %> sq. feet
+            </div>
+          </div>
+          <div class="details">
+            <div class="available">
+              Available <%= unit.available.strftime("%B %-d") %>
+            </div>
+            <div class="first-seen">
+              First seen <%= time_ago_in_words(unit.first_seen) %> ago
+            </div>
+          </div>
+          <% if unit.recent_rent_alerts.present? %>
+            <div class="toggle">
+              <a href class="toggle-link">Show historical rents</a>
+            </div>
+            <div class="historical-rents">
+              <ul>
+                <% unit.recent_rent_alerts.each do |rent_alert| %>
+                  <li><%= rent_alert.created_at.strftime("%B %-d") %>: <%= number_to_currency(rent_alert.new_value, precision: 0) %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

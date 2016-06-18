@@ -1,0 +1,48 @@
+.header {
+  @include outer-container(600px);
+}
+
+.building {
+  @include outer-container(600px);
+  padding: $base-spacing 0;
+}
+
+.unit {
+  @include span-columns(12);
+  padding: $small-spacing 0;
+}
+
+.summary {
+  @include span-columns(12);
+
+  @include media($medium-screen) {
+    @include span-columns(6);
+  }
+}
+
+.rent-head {
+  font-size: $base-font-size * 1.5;
+}
+
+.rent-sub {
+  font-size: $base-font-size * 0.75;
+}
+
+.details {
+  @include span-columns(12);
+
+  @include media($medium-screen) {
+    @include span-columns(6);
+    @include omega();
+    text-align: right;
+  }
+}
+
+.toggle {
+  @include span-columns(12);
+}
+
+.historical-rents {
+  @include span-columns(12);
+  display: none;
+}

@@ -2,7 +2,7 @@
   @include outer-container(600px);
 }
 
-.building {
+.building, .new_recipient {
   @include outer-container(600px);
   padding: $base-spacing 0;
 }
@@ -12,13 +12,29 @@
   padding: $small-spacing 0;
 }
 
-.summary {
+.summary, #recipient_first_name {
   @include span-columns(12);
 
   @include media($medium-screen) {
     @include span-columns(6);
   }
 }
+
+.details, #recipient_last_name {
+  @include span-columns(12);
+
+  @include media($medium-screen) {
+    @include span-columns(6);
+    @include omega();
+  }
+}
+
+.details {
+  @include media($medium-screen) {
+    text-align: right;
+  }
+}
+
 
 .rent-head {
   font-size: $base-font-size * 1.5;
@@ -26,16 +42,6 @@
 
 .rent-sub {
   font-size: $base-font-size * 0.75;
-}
-
-.details {
-  @include span-columns(12);
-
-  @include media($medium-screen) {
-    @include span-columns(6);
-    @include omega();
-    text-align: right;
-  }
 }
 
 .toggle {

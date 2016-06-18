@@ -6,7 +6,12 @@
         <li><a href="#building<%= building.id %>"><%= building.name %></a></li>
       <% end %>
     </ul>
-  </div>
+<%= form_for @recipient, url: { controller: "recipients", action: "create" } do |f| %>
+  <%= f.text_field :first_name, placeholder: "First name" %>
+  <%= f.text_field :last_name, placeholder: "Last name" %>
+  <%= f.text_field :email, placeholder: "Email address" %>
+  <%= f.submit "Subscribe to updates", style: "width: 100%;" %>
+<% end %>
 </div>
 <% @buildings.order(:name).each do |building| %>
   <div class="building">

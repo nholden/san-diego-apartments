@@ -7,6 +7,14 @@ class Scraper::MarketStreetVillageScraper < Scraper
     "Market Street Village"
   end
 
+  def self.address
+    "699 14th Street"
+  end
+
+  def self.website
+    "http://www.equityapartments.com/san-diego/downtown-san-diego/market-street-village-apartments"
+  end
+
   def self.page
     Nokogiri::HTML(open(LISTINGS_URL))
   end

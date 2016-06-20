@@ -8,6 +8,14 @@ class Scraper::LoftsScraper < Scraper
     "Lofts at 707 Tenth"
   end
 
+  def self.address
+    "707 Tenth Street"
+  end
+
+  def self.website
+    "http://www.thesandiegolofts.com/"
+  end
+
   def self.raw_listings
     raw_listings = []
     LOFTS_FLOORPLANS.each do |floorplan|

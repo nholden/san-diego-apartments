@@ -7,6 +7,14 @@ class Scraper::AvaCortezHillScraper < Scraper
     "Ava Cortez Hill"
   end
 
+  def self.address
+    "1399 Ninth Avenue"
+  end
+
+  def self.website
+    "http://www.avaloncommunities.com/california/san-diego-apartments/ava-cortez-hill"
+  end
+
   def self.json
     JSON.load(open(LISTINGS_URL))
   end

@@ -3,6 +3,8 @@ class Scraper
     raw_listings.map do |raw_listing|
       ScrapedListing.create(
         building_name: building_name,
+        address:       address,
+        website:       website,
         unit_name:     unit_name(raw_listing),
         rent:          rent(raw_listing),
         available:     available(raw_listing),

@@ -7,6 +7,14 @@ class Scraper::CamdenTuscanyScraper < Scraper
     "Camden Tuscany"
   end
 
+  def self.address
+    "1670 Kettner Blvd"
+  end
+
+  def self.website
+    "https://www.camdenliving.com/san-diego-ca-apartments/camden-tuscany/apartments"
+  end
+
   def self.page
     Nokogiri::HTML(open(LISTINGS_URL))
   end

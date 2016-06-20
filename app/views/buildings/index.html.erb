@@ -17,6 +17,10 @@
   <div class="building">
     <a name="building<%= building.id %>"></a>
     <h2><%= building.name %></h2>
+    <div class="building-links">
+      <%= link_to "Website", building.website, target: "_blank" %> |
+      <%= link_to "Google Maps", "http://maps.google.com/?q=#{building.address}, San Diego, CA", target: "_blank" %>
+    </div>
     <% building.units.order(:rent).each do |unit| %>
       <% if unit.recently_seen? %>
         <div class="unit">

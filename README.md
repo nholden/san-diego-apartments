@@ -1,5 +1,5 @@
 # San Diego Apartments
-Gathers data on available San Diego apartments and alerts subscribers to changes
+Gathers data on available San Diego apartments and alerts subscribers to changes.
 
 ## Screenshots
 
@@ -10,7 +10,7 @@ Gathers data on available San Diego apartments and alerts subscribers to changes
 ![email alert screenshot](https://cloud.githubusercontent.com/assets/7942714/16213464/984fb594-371d-11e6-8760-9dac12500634.png)
 
 ## Demo
-Try it out for yourself at [http://sandiego.nickholden.io](http://sandiego.nickholden.io)
+Try it out for yourself at [http://sandiego.nickholden.io](http://sandiego.nickholden.io).
 
 ## Installation
 
@@ -28,9 +28,9 @@ bundle exec rake db:reset
 rails s
 ```
 
-The app scrapes data from apartment websites using tasks, which you can view at `lib/tasks/scheduler.rake`. Run a task from the command line with  `bundle exec rake [TASK NAME]`. You can also configure a service like Heroku Scheduler to run these tasks at regular intervals.
+The app scrapes data from apartment websites using tasks, which you can view at [`lib/tasks/scheduler.rake`](https://github.com/nholden/san-diego-apartments/blob/master/lib/tasks/scheduler.rake). Run a task from the command line with  `bundle exec rake [TASK NAME]`. You can also configure a service like [Heroku Scheduler](https://elements.heroku.com/addons/scheduler) to run these tasks at regular intervals.
 
-Email alerts are sent by Mailgun. Sign up for a free account at [mailgun.com](http://www.mailgun.com). Copy `.env.example` to `.env` and fill in your Mailgun credentials.
+Email alerts are sent by Mailgun. Sign up for a free account at [mailgun.com](http://www.mailgun.com). Copy [`.env.example`](https://github.com/nholden/san-diego-apartments/blob/master/.env.example) to `.env` and fill in your Mailgun credentials.
 
 ## Testing
 

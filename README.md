@@ -3,11 +3,7 @@ Gathers data on available San Diego apartments and alerts subscribers to changes
 
 ## Screenshots
 
-### Web
-![web screenshot](https://cloud.githubusercontent.com/assets/7942714/16213460/96b420da-371d-11e6-97d7-d04769614e2c.png)
-
-### Email alert
-![email alert screenshot](https://cloud.githubusercontent.com/assets/7942714/16213464/984fb594-371d-11e6-8760-9dac12500634.png)
+![screenshot](https://cloud.githubusercontent.com/assets/7942714/16229957/2a4a8a36-378d-11e6-8f0e-dea6dbd069cd.png)
 
 ## Demo
 Try it out for yourself at [http://sandiego.nickholden.io](http://sandiego.nickholden.io).

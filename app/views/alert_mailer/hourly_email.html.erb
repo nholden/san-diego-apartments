@@ -1,22 +1,21 @@
 <p>Hi <%= @recipient.first_name %>,</p>
-<p>Below are the most recent updates I have for you. You can always view the most up-to-date listings at <%= link_to "sandiego.nickholden.io", "http://sandiego.nickholden.io", target: "_blank" %>.</p>
+<p>Below are the most recent updates I have for you. You can always view the most up-to-date listings at <%= link_to "sandiego.nickholden.io", "http://sandiego.nickholden.io", target: "_blank", style: "color: #104c90;" %>.</p>
 
 <% if @new_units.present? %> 
   <h2>New units</h2>
   <% @new_units.each do |unit| %>
     <div class="unit">
       <h3><%= unit.building_name %> unit <%= unit.name %></h3>
-      <p>
-        <%= link_to "Website", building.website, target: "_blank" %> |
-        <%= link_to "Google Maps", "http://maps.google.com/?q=#{building.address}, San Diego, CA", target: "_blank" %>
-      </p>
       <ul>
         <li>Rent: <%= number_to_currency(unit.rent, precision: 0) %></li>
         <li>Available: <%= unit.available.strftime("%B %-d") %></li>
         <li>Lease: <%= unit.lease_months %> months</li>
         <li>Beds: <%= unit.beds %></li>
         <li>Square feet: <%= unit.square_feet %></li>
-      </ul>
+        <li>
+          <%= link_to "Website", unit.building.website, target: "_blank", style: "color: #104c90;" %> |
+          <%= link_to "Google Maps", "http://maps.google.com/?q=#{unit.building.address}, San Diego, CA", target: "_blank", style: "color: #104c90;" %>
+        </li>
     </div>
   <% end %>
 <% end %>
@@ -33,6 +32,10 @@
         <li>Beds: <%= unit.beds %></li>
         <li>Square feet: <%= unit.square_feet %></li>
         <li>First seen <%= time_ago_in_words(unit.first_seen) %> ago
+        <li>
+          <%= link_to "Website", unit.building.website, target: "_blank", style: "color: #104c90;" %> |
+          <%= link_to "Google Maps", "http://maps.google.com/?q=#{unit.building.address}, San Diego, CA", target: "_blank", style: "color: #104c90;" %>
+        </li>
       </ul>
     </div>
   <% end %>
@@ -50,6 +53,10 @@
         <li>Beds: <%= unit.beds %></li>
         <li>Square feet: <%= unit.square_feet %></li>
         <li>First seen <%= time_ago_in_words(unit.first_seen) %> ago
+        <li>
+          <%= link_to "Website", unit.building.website, target: "_blank", style: "color: #104c90;" %> |
+          <%= link_to "Google Maps", "http://maps.google.com/?q=#{unit.building.address}, San Diego, CA", target: "_blank", style: "color: #104c90;" %>
+        </li>
       </ul>
     </div>
   <% end %>

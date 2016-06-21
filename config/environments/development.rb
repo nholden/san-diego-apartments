@@ -27,6 +27,8 @@ Rails.application.configure do
     :password => ENV['MAILGUN_SMTP_PASSWORD']
   }
 
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

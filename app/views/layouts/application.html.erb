@@ -3,7 +3,7 @@
 <head>
   <title>San Diego apartment listings</title>
   <script>
-    var googleAnalyticsId = <%= ENV['GOOGLE_ANALYTICS_ID'] %>;
+    var googleAnalyticsId = "<%= ENV['GOOGLE_ANALYTICS_ID'] %>";
   </script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

@@ -10,7 +10,8 @@ class NewListingWorker
       available: scraped_listing.available,
       lease_months: scraped_listing.lease_months,
       square_feet: scraped_listing.square_feet,
-      beds: scraped_listing.beds
+      beds: scraped_listing.beds,
+      last_seen: DateTime.now
     )
     Listing.create(
       rent: scraped_listing.rent,

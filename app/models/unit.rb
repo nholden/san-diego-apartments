@@ -28,11 +28,7 @@ class Unit < ActiveRecord::Base
   end
 
   def first_seen
-    listings.first.created_at
-  end
-
-  def last_seen
-    listings.last.created_at
+    created_at
   end
 
   def recently_seen?

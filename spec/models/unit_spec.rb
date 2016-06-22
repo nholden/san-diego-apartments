@@ -8,14 +8,10 @@ RSpec.describe Unit, type: :model do
     Then { unit.building_name == building_name }
   end
 
-  describe "#first_seen and #last_seen" do
-    Given(:first_created_at) { DateTime.new(2015,10,11,12,13,14) }
-    Given(:last_created_at) { DateTime.new(2015,05,17,18,19,20) }
-    Given(:unit) { FactoryGirl.create(:unit, listings: [first_listing, last_listing]) }
-    Given(:first_listing) { FactoryGirl.create(:listing, created_at: first_created_at) }
-    Given(:last_listing) { FactoryGirl.create(:listing, created_at: last_created_at) }
-    Then { unit.first_seen == first_created_at }
-    And { unit.last_seen == last_created_at }
+  describe "#first_seen" do
+    Given(:created_at) { DateTime.new(2015,10,11,12,13,14) }
+    Given(:unit) { FactoryGirl.create(:unit, created_at: created_at) }
+    Then { unit.first_seen == created_at }
   end
 
   describe "#save_with_alerts" do
@@ -104,15 +100,15 @@ RSpec.describe Unit, type: :model do
   end
 
   describe "#recently_seen?" do
-    Given(:unit) { FactoryGirl.create(:unit, listings: listings) }
+    Given(:unit) { FactoryGirl.create(:unit, last_seen: last_seen) }
 
     context "when the unit was seen today" do
-      Given(:listings) { [FactoryGirl.create(:listing, created_at: DateTime.now)] }
+      Given(:last_seen) { DateTime.now }
       Then { unit.recently_seen? }
     end
 
     context "when the unit hasn't been seen today" do
-      Given(:listings) { [FactoryGirl.create(:listing, created_at: 2.days.ago)] }
+      Given(:last_seen) { 2.days.ago }
       Then { !unit.recently_seen? }
     end
   end

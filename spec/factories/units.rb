@@ -7,5 +7,6 @@ FactoryGirl.define do
     rent 2000
     available Date.new(2016, 8, 15)
     lease_months 12
+    last_seen DateTime.new(2016, 6, 22, 0, 0, 0)
   end
 end

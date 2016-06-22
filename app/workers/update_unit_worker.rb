@@ -1,4 +1,4 @@
-class NewListingWorker
+class UpdateUnitWorker
   def perform(scraped_listing_id)
     scraped_listing = ScrapedListing.find(scraped_listing_id)
     building = Building.find_or_create_by(name: scraped_listing.building_name)
@@ -12,12 +12,6 @@ class NewListingWorker
       square_feet: scraped_listing.square_feet,
       beds: scraped_listing.beds,
       last_seen: DateTime.now
-    )
-    Listing.create(
-      rent: scraped_listing.rent,
-      available: scraped_listing.available,
-      lease_months: scraped_listing.lease_months,
-      unit: unit
     )
   end
 end

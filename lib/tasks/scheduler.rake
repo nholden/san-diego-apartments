@@ -3,9 +3,9 @@ task :scrape_camden_tuscany => :environment do
   scraped_listings = Scraper::CamdenTuscanyScraper.scrape
   puts "Done scraping Camden Tuscany."
 
-  puts "Running NewListingWorkers on scraped Camden Tuscany listings..."
+  puts "Running UpdateUnitWorkers on scraped Camden Tuscany listings..."
   scraped_listings.each do |scraped_listing|
-    worker = NewListingWorker.new
+    worker = UpdateUnitWorker.new
     worker.perform(scraped_listing.id)
   end
   puts "Done running workers on Camden Tuscany listings."
@@ -16,9 +16,9 @@ task :scrape_ava_cortez_hill => :environment do
   scraped_listings = Scraper::AvaCortezHillScraper.scrape
   puts "Done scraping Ava Cortez Hill."
 
-  puts "Running NewListingWorkers on scraped Ava Cortez Hill listings..."
+  puts "Running UpdateUnitWorkers on scraped Ava Cortez Hill listings..."
   scraped_listings.each do |scraped_listing|
-    worker = NewListingWorker.new
+    worker = UpdateUnitWorker.new
     worker.perform(scraped_listing.id)
   end
   puts "Done running workers on Ava Cortez Hill listings."
@@ -29,9 +29,9 @@ task :scrape_lofts => :environment do
   scraped_listings = Scraper::LoftsScraper.scrape
   puts "Done scraping the Lofts at 707 Tenth."
 
-  puts "Running NewListingWorkers on scraped Lofts at 707 Tenth listings..."
+  puts "Running UpdateUnitWorkers on scraped Lofts at 707 Tenth listings..."
   scraped_listings.each do |scraped_listing|
-    worker = NewListingWorker.new
+    worker = UpdateUnitWorker.new
     worker.perform(scraped_listing.id)
   end
   puts "Done running workers on the Lofts at 707 Tenth listings."
@@ -42,21 +42,12 @@ task :scrape_market_street_village => :environment do
   scraped_listings = Scraper::MarketStreetVillageScraper.scrape
   puts "Done scraping Market Street Village."
 
-  puts "Running NewListingWorkers on scraped Market Street Village listings..."
+  puts "Running UpdateUnitWorkers on scraped Market Street Village listings..."
   scraped_listings.each do |scraped_listing|
-    worker = NewListingWorker.new
+    worker = UpdateUnitWorker.new
     worker.perform(scraped_listing.id)
   end
   puts "Done running workers on Market Street Village listings."
-end
-
-task :clean_listings => :environment do
-  Unit.all.each do |unit|
-    puts "Cleaning #{unit.listings.count} listings for #{unit.building.name} unit #{unit.name}."
-    worker = CleanListingsWorker.new
-    worker.perform(unit.id)
-    puts "Done cleaning. #{unit.listings.count} listings remaining for #{unit.building.name} unit #{unit.name}."
-  end
 end
 
 task :delete_scraped_listings => :environment do

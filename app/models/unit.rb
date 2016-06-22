@@ -4,6 +4,8 @@ class Unit < ActiveRecord::Base
   has_many :available_alerts
   has_many :new_unit_alerts
 
+  scope :recently_seen, -> { where("last_seen > ?", 1.day.ago) }
+
   def self.update_or_create_by_with_alerts(attributes)
     unit = Unit.where(name: attributes[:name], building_id: attributes[:building_id]).last
     if unit.present?
@@ -28,10 +30,6 @@ class Unit < ActiveRecord::Base
 
   def first_seen
     created_at
-  end
-
-  def recently_seen?
-    last_seen > 1.day.ago
   end
 
   def recent_rent_alerts

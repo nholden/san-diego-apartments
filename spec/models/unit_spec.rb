@@ -99,17 +99,17 @@ RSpec.describe Unit, type: :model do
     And { unit.recent_rent_alerts[0].new_value == newest_new_value }
   end
 
-  describe "#recently_seen?" do
+  describe "recently_seen scope" do
     Given(:unit) { FactoryGirl.create(:unit, last_seen: last_seen) }
 
     context "when the unit was seen today" do
       Given(:last_seen) { DateTime.now }
-      Then { unit.recently_seen? }
+      Then { unit.in?(Unit.recently_seen) }
     end
 
     context "when the unit hasn't been seen today" do
       Given(:last_seen) { 2.days.ago }
-      Then { !unit.recently_seen? }
+      Then { !unit.in?(Unit.recently_seen) }
     end
   end
 end

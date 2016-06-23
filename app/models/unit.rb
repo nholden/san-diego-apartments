@@ -35,4 +35,10 @@ class Unit < ActiveRecord::Base
   def recent_rent_alerts
     rent_alerts.last(5).reverse
   end
+
+  def rent_by_date
+    {}.tap do |dates|
+      rent_alerts.each { |rent_alert| dates[rent_alert.created_at.to_date] = rent_alert.new_value }
+    end
+  end
 end

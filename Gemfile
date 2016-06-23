@@ -22,6 +22,7 @@ gem 'puma'
 gem 'bourbon', '~> 5.0.0.beta.5'
 gem 'neat'
 gem 'email_validator'
+gem 'chartkick'
 
 group :development do
   gem 'web-console', '~> 2.0'

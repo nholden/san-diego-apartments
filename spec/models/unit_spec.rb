@@ -112,4 +112,35 @@ RSpec.describe Unit, type: :model do
       Then { !unit.in?(Unit.recently_seen) }
     end
   end
+
+  describe "#rent_by_date" do
+    Given(:unit) { FactoryGirl.create(:unit, rent_alerts: rent_alerts) }
+    Given(:rent_alerts) { [] }
+    Given(:starting_date) { DateTime.new(2016, 7, 4, 0, 0, 0) }
+    Given(:starting_rent) { 2000 }
+    Given(:daily_increase) { 100 }
+
+    When do
+      5.times do |n|
+        rent_alerts.push(
+          FactoryGirl.create(
+            :rent_alert,
+            created_at: starting_date.advance(days: n),
+            old_value: (starting_rent + (n * daily_increase)),
+            new_value: (starting_rent + (n+1) * daily_increase)
+          )
+        )
+      end
+    end
+
+    Then do
+      unit.rent_by_date == {
+        starting_date.to_date                  => starting_rent + daily_increase,
+        starting_date.advance(days: 1).to_date => starting_rent + (daily_increase * 2),
+        starting_date.advance(days: 2).to_date => starting_rent + (daily_increase * 3),
+        starting_date.advance(days: 3).to_date => starting_rent + (daily_increase * 4),
+        starting_date.advance(days: 4).to_date => starting_rent + (daily_increase * 5)
+      }
+    end
+  end
 end

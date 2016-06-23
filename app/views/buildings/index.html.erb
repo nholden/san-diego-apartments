@@ -43,16 +43,12 @@
             First seen <%= time_ago_in_words(unit.first_seen) %> ago
           </div>
         </div>
-        <% if unit.recent_rent_alerts.present? %>
+        <% if unit.recent_rent_alerts.count > 1 %>
           <div class="toggle">
             <a href class="toggle-link">Show historical rents</a>
           </div>
           <div class="historical-rents">
-            <ul>
-              <% unit.recent_rent_alerts.each do |rent_alert| %>
-                <li><%= rent_alert.created_at.strftime("%B %-d") %>: <%= number_to_currency(rent_alert.new_value, precision: 0) %></li>
-              <% end %>
-            </ul>
+            <%= line_chart(unit.rent_by_date) %>
           </div>
         <% end %>
       </div>

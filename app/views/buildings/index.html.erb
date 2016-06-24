@@ -14,15 +14,34 @@
 <% end %>
 </div>
 <% @buildings.order(:name).each do |building| %>
-  <div class="building">
+  <div class="building" id="building_<%= building.id %>">
     <a name="building<%= building.id %>"></a>
     <h2><%= building.name %></h2>
     <div class="building-links">
       <%= link_to "Website", building.website, target: "_blank" %> |
       <%= link_to "Google Maps", "http://maps.google.com/?q=#{building.address}, San Diego, CA", target: "_blank" %>
     </div>
+    <div class="filters">
+      <div class="beds-filter">
+        <div class="filter" id="<%= building.id %>_0br_filter">
+          <input type="checkbox" id="<%= building.id %>_0br_checkbox" checked>
+          <label for="<%= building.id %>_0br_checkbox">Studios</label>
+          <br><span></span>
+        </div>
+        <div class="filter" id="<%= building.id %>_1br_filter">
+          <input type="checkbox" id="<%= building.id %>_1br_checkbox" checked>
+          <label for="<%= building.id %>_1br_checkbox">1 BR</label>
+          <br><span></span>
+        </div>
+        <div class="filter" id="<%= building.id %>_2br_filter">
+          <input type="checkbox" id="<%= building.id %>_2br_checkbox" checked>
+          <label for="<%= building.id %>_2br_checkbox">2 BR</label>
+          <br><span></span>
+        </div>
+      </div>
+    </div>
     <% building.units.order(:rent).recently_seen.each do |unit| %>
-      <div class="unit">
+      <div class="unit" data-beds="<%= unit.beds %>" data-rent="<%= number_to_currency(unit.rent, precision: 0) %>">
         <div class="summary">
           <div class="rent">
             <span class="rent-head"><%= number_to_currency(unit.rent, precision: 0) %></span>

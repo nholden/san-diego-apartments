@@ -17,10 +17,10 @@ toggleLinks.forEach(function(link) {
   });
 });
 
-var bedsFilters = document.querySelectorAll(".beds-filter");
+var bedroomFilters = document.querySelectorAll(".beds-filter");
 
-bedsFilters.forEach(function(bedsFilter) {
-  var filters = bedsFilter.querySelectorAll(".filter");
+bedroomFilters.forEach(function(bedroomFilter) {
+  var filters = bedroomFilters.querySelectorAll(".filter");
 
   filters.forEach(function(filter) {
     var buildingId = filter.id.match(/^\d/)[0];
@@ -36,38 +36,8 @@ bedsFilters.forEach(function(bedsFilter) {
     });
 
     if (unitsWithBeds.length > 0) {
+      console.log("Building " + buildingId + "has " + unitsWithBeds.length + " " + beds + " bedrooms");
       filter.style.display = "block";
-      var rents = [];
-
-      unitsWithBeds.forEach(function(unit) {
-        rents.push(unit.dataset.rent);
-      });
-
-      var startingRent = rents.sort()[0];
-      var startingRentSpan = filter.querySelector("span");
-      startingRentSpan.innerText = "from " + startingRent;
-
-      var checkbox = filter.querySelector("input");
-
-      checkbox.addEventListener("change", function(event) {
-        if (checkbox.checked == true) {
-          showDivs(unitsWithBeds);
-        } else {
-          hideDivs(unitsWithBeds);
-        }
-      });
     }
   });
 });
-
-function showDivs(divs) {
-  divs.forEach(function(div) {
-    div.style.display = "block";
-  });
-}
-
-function hideDivs(divs) {
-  divs.forEach(function(div) {
-    div.style.display = "none";
-  });
-}

@@ -7,6 +7,25 @@
   padding: $base-spacing 0;
 }
 
+.filters {
+  margin-top: $small-spacing;
+}
+
+.beds-filter input {
+  float: left;
+  margin-bottom: $base-spacing;
+}
+
+.beds-filter label {
+  float: left;
+  margin-bottom: 0;
+}
+
+.filter {
+  @include span-columns(4);
+  display: none;
+}
+
 .unit {
   @include span-columns(12);
   padding: $small-spacing 0;

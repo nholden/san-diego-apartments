@@ -50,6 +50,19 @@ task :scrape_market_street_village => :environment do
   puts "Done running workers on Market Street Village listings."
 end
 
+task :scrape_vantage_pointe => :environment do
+  puts "Scraping #{Scraper::VantagePointeScraper::LISTINGS_URL}..."
+  scraped_listings = Scraper::VantagePointeScraper.scrape
+  puts "Done scraping Vantage Pointe."
+
+  puts "Running UpdateUnitWorkers on scraped Vantage Pointe listings..."
+  scraped_listings.each do |scraped_listing|
+    worker = UpdateUnitWorker.new
+    worker.perform(scraped_listing.id)
+  end
+  puts "Done running workers on Vantage Pointe listings."
+end
+
 task :delete_scraped_listings => :environment do
   puts "Deleting #{ScrapedListing.count} scraped listings."
   worker = DeleteScrapedListingsWorker.new

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   var toggleLinks = document.querySelectorAll(".toggle-link");
 
-toggleLinks.forEach(function(link) {
+  toggleLinks.forEach(function(link) {
     link.addEventListener("click", function(event) {
       event.preventDefault();
       var historicalRentsDiv = link.parentElement.parentElement.querySelector(".historical-rents");

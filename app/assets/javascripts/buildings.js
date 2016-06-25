@@ -37,17 +37,6 @@ toggleLinks.forEach(function(link) {
       });
 
       if (unitsWithBeds.length > 0) {
-        filter.style.display = "block";
-        var rents = [];
-
-        unitsWithBeds.forEach(function(unit) {
-          rents.push(unit.dataset.rent);
-        });
-
-        var startingRent = rents.sort()[0];
-        var startingRentSpan = filter.querySelector("span");
-        startingRentSpan.innerText = "from " + startingRent;
-
         var checkbox = filter.querySelector("input");
 
         checkbox.addEventListener("change", function(event) {

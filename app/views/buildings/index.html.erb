@@ -6,12 +6,13 @@
         <li><a href="#building<%= building.id %>"><%= building.name %></a></li>
       <% end %>
     </ul>
-<%= form_for @recipient, url: { controller: "recipients", action: "create" } do |f| %>
-  <%= f.text_field :first_name, placeholder: "First name" %>
-  <%= f.text_field :last_name, placeholder: "Last name" %>
-  <%= f.text_field :email, placeholder: "Email address" %>
-  <%= f.submit "Subscribe to updates", style: "width: 100%;" %>
-<% end %>
+    <%= form_for @recipient, url: { controller: "recipients", action: "create" } do |f| %>
+      <%= f.text_field :first_name, placeholder: "First name" %>
+      <%= f.text_field :last_name, placeholder: "Last name" %>
+      <%= f.text_field :email, placeholder: "Email address" %>
+      <%= f.submit "Subscribe to updates", style: "width: 100%;" %>
+    <% end %>
+  </div>
 </div>
 <% @buildings.order(:name).each do |building| %>
   <div class="building" id="building_<%= building.id %>">
@@ -23,25 +24,19 @@
     </div>
     <div class="filters">
       <div class="beds-filter">
-        <div class="filter" id="<%= building.id %>_0br_filter">
-          <input type="checkbox" id="<%= building.id %>_0br_checkbox" checked>
-          <label for="<%= building.id %>_0br_checkbox">Studios</label>
-          <br><span></span>
-        </div>
-        <div class="filter" id="<%= building.id %>_1br_filter">
-          <input type="checkbox" id="<%= building.id %>_1br_checkbox" checked>
-          <label for="<%= building.id %>_1br_checkbox">1 BR</label>
-          <br><span></span>
-        </div>
-        <div class="filter" id="<%= building.id %>_2br_filter">
-          <input type="checkbox" id="<%= building.id %>_2br_checkbox" checked>
-          <label for="<%= building.id %>_2br_checkbox">2 BR</label>
-          <br><span></span>
-        </div>
+        <% [0, 1, 2].each do |beds| %>
+          <% if building.has_recently_seen_units_with_beds?(beds) %>
+            <div class="filter" id="<%= "#{building.id}_#{beds}br_filter" %>">
+              <input type="checkbox" id="<%= "#{building.id}_#{beds}br_checkbox" %>" checked>
+              <label for="<%= "#{building.id}_#{beds}br_checkbox" %>"><%= beds %> beds</label>
+              <br>starting at <%= number_to_currency(building.recently_seen_starting_rent_for_beds(beds), precision: 0) %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <% building.units.order(:rent).recently_seen.each do |unit| %>
-      <div class="unit" data-beds="<%= unit.beds %>" data-rent="<%= number_to_currency(unit.rent, precision: 0) %>">
+      <div class="unit" data-beds="<%= unit.beds %>">
         <div class="summary">
           <div class="rent">
             <span class="rent-head"><%= number_to_currency(unit.rent, precision: 0) %></span>

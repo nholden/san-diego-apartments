@@ -143,4 +143,23 @@ RSpec.describe Unit, type: :model do
       }
     end
   end
+
+  describe "historical rent calculations" do
+    Given(:unit) { FactoryGirl.create(:unit, rent_alerts: rent_alerts) }
+    Given(:median_rent) { 2000 }
+    Given(:low_rent) { 1500 }
+    Given(:high_rent) { 3000 }
+
+    Given(:rent_alerts) do
+      [
+        FactoryGirl.create(:rent_alert, old_value: median_rent, new_value: low_rent),
+        FactoryGirl.create(:rent_alert, old_value: low_rent, new_value: high_rent)
+      ]
+    end
+
+    Then { unit.historical_rents == [median_rent, low_rent, high_rent] }
+    And  { unit.low_rent == low_rent }
+    And  { unit.median_rent == median_rent }
+    And  { unit.high_rent == high_rent }
+  end
 end

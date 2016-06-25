@@ -62,7 +62,7 @@
             <a href class="toggle-link">Show historical rents</a>
           </div>
           <div class="historical-rents">
-            <%= line_chart(unit.rent_by_date, min: min_y(unit.rent), max: max_y(unit.rent)) %>
+            <%= line_chart(unit.rent_by_date, min: unit.low_rent, max: unit.high_rent) %>
           </div>
         <% end %>
       </div>

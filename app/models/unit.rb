@@ -41,4 +41,21 @@ class Unit < ActiveRecord::Base
       rent_alerts.each { |rent_alert| dates[rent_alert.created_at.to_date] = rent_alert.new_value }
     end
   end
+
+  def historical_rents
+    [rent_alerts.first.old_value] + rent_alerts.pluck(:new_value)
+  end
+
+  def low_rent
+    historical_rents.sort.first
+  end
+
+  def high_rent
+    historical_rents.sort.last
+  end
+
+  def median_rent
+    rents = historical_rents.sort
+    (rents[(rents.length - 1) / 2] + rents[rents.length / 2]) / 2
+  end
 end

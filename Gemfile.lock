@@ -144,6 +144,8 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    rollbar (2.11.5)
+      multi_json
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -230,6 +232,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.5.1)
   rails_12factor
+  rollbar
   rspec-given
   rspec-rails
   sass-rails (~> 5.0)

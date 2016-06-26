@@ -20,11 +20,15 @@ class Scraper::MarketStreetVillageScraper < Scraper
   end
 
   def self.raw_listings
-    page.css('.list-group-item')
+    page.css('.list-group-item').select { |listing| has_unit?(listing) }
   end
 
   def self.unit_name(raw_listing)
     raw_listing.inner_html.match(/unitId: (\d+)/)[1]
+  end
+
+  def self.has_unit?(raw_listing)
+    raw_listing.inner_html.match(/unitId: (\d+)/) ? true : false
   end
 
   def self.rent(raw_listing)

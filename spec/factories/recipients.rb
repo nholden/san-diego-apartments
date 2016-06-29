@@ -1,7 +1,9 @@
 FactoryGirl.define do
   factory :recipient do
-    first_name "MyString"
-    last_name "MyString"
-    email "MyString"
+    first_name "Donald"
+    last_name "Trump"
+    email "trump@donaldjtrump.com"
+    unsubscribed_at nil
+    token "aLongHardToGuessSeriesOfLettersAndNumb3rs"
   end
 end

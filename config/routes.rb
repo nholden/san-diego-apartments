@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'buildings#index'
   resources 'recipients', only: ['create']
+  get 'unsubscribe/:token', to: 'recipients#unsubscribe'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -62,6 +62,4 @@
   <% end %>
 <% end %>
 <p>Love,<br />Apartment Bot</p>
-<br />
-<br />
-<p style="font-size: 75%;"><%= link_to "Unsubscribe", "http://sandiego.nickholden.io/unsubscribe/#{@recipient.token}" %>
+<p style="font-size: 75%;"><%= link_to "Unsubscribe", "http://sandiego.nickholden.io/unsubscribe/#{@recipient.token}", target: "_blank", style: "color: #104c90;" %>

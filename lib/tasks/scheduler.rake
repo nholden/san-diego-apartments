@@ -74,7 +74,7 @@ task :send_hourly_alert_email => :environment do
   puts "Checking for new alerts."
   if NewUnitAlert.units_from_last_hour.present? || RentAlert.units_from_last_hour.present? || AvailableAlert.units_from_last_hour.present?
     puts "Found new alerts. Sending emails."
-    Recipient.all.each do |recipient|
+    Recipient.subscribed.each do |recipient|
       AlertMailer.hourly_email(recipient).deliver_now
     end
   else

@@ -1,0 +1,33 @@
+<div class="header">
+  <h1>Your subscriptions</h1>
+</div>
+<div class="subscriptions">
+  <%= form_for(@recipient) do |f| %>
+    <%= hidden_field(:recipient, :token) %>
+    <div class="subscription">
+      <div class="label">
+        New units
+      </div>
+      <div class="select-container">
+        <%= f.select(:new_unit_subscription, subscription_options) %>
+      </div>
+    </div>
+    <div class="subscription">
+      <div class="label">
+        Updated rents
+      </div>
+      <div class="select-container">
+        <%= f.select(:rent_subscription, subscription_options) %>
+      </div>
+    </div>
+    <div class="subscription">
+      <div class="label">
+        Updated availability dates
+      </div>
+      <div class="select-container">
+        <%= f.select(:availability_subscription, subscription_options) %>
+      </div>
+    </div>
+    <button>Save subscriptions</button>
+  <% end %>
+</div>

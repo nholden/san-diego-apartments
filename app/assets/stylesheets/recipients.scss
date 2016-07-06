@@ -1,0 +1,39 @@
+.subscriptions {
+  @include outer-container(600px);
+
+  .subscription {
+    @include span-columns(12);
+    padding: $small-spacing 0;
+
+    .label {
+      @include span-columns(12);
+      line-height: $base-line-height * 2;
+
+      @include media($medium-screen) {
+        @include span-columns(6);
+        text-align: right;
+      }
+    }
+
+    .select-container {
+      @include span-columns(12);
+      line-height: $base-line-height * 2;
+
+      @include media($medium-screen) {
+        @include span-columns(6);
+        @include omega();
+      }
+
+      select {
+        width: 100%;
+        height: $base-spacing * 2;
+        -webkit-appearance: menulist-button;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    margin-top: $base-spacing;
+  }
+}

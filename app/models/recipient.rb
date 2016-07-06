@@ -26,4 +26,8 @@ class Recipient < ActiveRecord::Base
     self.unsubscribed_at = DateTime.now
     save
   end
+
+  def email_with_name
+    "\"#{first_name} #{last_name}\" <#{email}>"
+  end
 end

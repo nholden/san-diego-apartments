@@ -35,4 +35,9 @@ RSpec.describe Recipient, type: :model do
 
     Then { recipient.unsubscribed_at.present? }
   end
+
+  describe "#email_with_name" do
+    Given(:recipient) { FactoryGirl.create(:recipient, first_name: 'Nick', last_name: 'Holden', email: 'nick@nickholden.io') }
+    Then { recipient.email_with_name == '"Nick Holden" <nick@nickholden.io>' }
+  end
 end

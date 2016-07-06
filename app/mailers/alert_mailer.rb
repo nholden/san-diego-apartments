@@ -2,20 +2,32 @@ class AlertMailer < ApplicationMailer
   include ActionView::Helpers::TextHelper
   default from: %("Apartment Bot" <apartmentbot@nickholden.io>)
 
-  def hourly_email(recipient)
+  def alert_email(recipient, type, alerts)
     @recipient = recipient
-    @new_units = NewUnitAlert.units_from_last_hour
-    @rent_changed_units = RentAlert.units_from_last_hour
-    @available_changed_units = AvailableAlert.units_from_last_hour
+    @type = type
+    @new_unit_alerts = alerts[:new_unit_alerts]
+    @rent_alerts = alerts[:rent_alerts]
+    @available_alerts = alerts[:available_alerts]
 
-    email_with_name = %("#{@recipient.first_name} #{@recipient.last_name}" <#{@recipient.email}>)
+    subject = "Your #{type_for_subject_line(type)} San Diego updates (#{update_counts(alerts)})"
+    mail(to: recipient.email_with_name, subject: subject)
+  end
 
-    updated_elements = []
-    updated_elements.push(pluralize(@new_units.length, "new unit")) if @new_units.present?
-    updated_elements.push(pluralize(@rent_changed_units.length, "updated rent")) if @rent_changed_units.present?
-    updated_elements.push(pluralize(@available_changed_units.length, "updated availability date")) if @available_changed_units.present?
-    subject = "Your recent San Diego updates (" + updated_elements.join(", ") + ")"
+  private
 
-    mail(to: email_with_name, subject: subject)
+  def type_for_subject_line(type)
+    case type
+    when 'immediate' then 'recent'
+    when 'daily' then 'daily'
+    when 'monthly' then 'monthly'
+    end
+  end
+
+  def update_counts(alerts)
+    [].tap do |updated_elements|
+      updated_elements.push(pluralize(alerts[:new_unit_alerts].length, "new unit")) if alerts[:new_unit_alerts].present?
+      updated_elements.push(pluralize(alerts[:rent_alerts].length, "updated rent")) if alerts[:rent_alerts].present?
+      updated_elements.push(pluralize(alerts[:available_alerts].length, "updated availability date")) if alerts[:available_alerts].present?
+    end.join(", ")
   end
 end

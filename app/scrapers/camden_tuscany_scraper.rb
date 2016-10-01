@@ -36,7 +36,7 @@ class CamdenTuscanyScraper < BaseScraper
   end
 
   def self.beds(raw_listing)
-    raw_listing.css('.unit-info').text.match(/Beds (\d)/)[1].to_i
+    raw_listing.css('.unit-info').text.match(/Beds (\d|Studio)/)[1].to_i
   end
 
   def self.square_feet(raw_listing)

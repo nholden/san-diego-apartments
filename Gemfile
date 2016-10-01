@@ -20,13 +20,16 @@ gem 'email_validator'
 gem 'chartkick'
 gem 'rollbar'
 
+group :development, :test do
+  gem 'pry'
+end
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
 group :test do
-  gem 'pry'
   gem 'rspec-rails'
   gem 'rspec-given'
   gem 'factory_girl_rails'

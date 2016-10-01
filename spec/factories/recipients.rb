@@ -5,8 +5,5 @@ FactoryGirl.define do
     email "trump@donaldjtrump.com"
     unsubscribed_at nil
     token "aLongHardToGuessSeriesOfLettersAndNumb3rs"
-    new_unit_subscription "immediate"
-    rent_subscription "immediate"
-    availability_subscription "immediate"
   end
 end

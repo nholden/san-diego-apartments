@@ -1,10 +1,9 @@
 <p>Hi <%= @recipient.first_name %>,</p>
 <p>Below are the most recent updates I have for you. You can always view the most up-to-date listings at <%= link_to "sandiego.nickholden.io", "http://sandiego.nickholden.io", target: "_blank", style: "color: #104c90;" %>.</p>
 
-<% if @new_unit_alerts.present? %>
+<% if @new_units.present? %> 
   <h2>New units</h2>
-  <% @new_unit_alerts.each do |alert| %>
-    <% unit = alert.unit %>
+  <% @new_units.each do |unit| %>
     <div class="unit">
       <h3><%= unit.building_name %> unit <%= unit.name %></h3>
       <ul>
@@ -21,14 +20,13 @@
   <% end %>
 <% end %>
 
-<% if @rent_alerts.present? %>
+<% if @rent_changed_units.present? %> 
   <h2>Rent changed</h2>
-  <% @rent_alerts.each do |alert| %>
-    <% unit = alert.unit %>
+  <% @rent_changed_units.each do |unit| %>
     <div class="unit">
       <h3><%= unit.building.name %> unit <%= unit.name %></h3>
       <ul>
-        <li>Rent: <%= number_to_currency(unit.rent, precision: 0) %> (was <%= number_to_currency(alert.old_value, precision: 0) %>)</li>
+        <li>Rent: <%= number_to_currency(unit.rent, precision: 0) %> (was <%= number_to_currency(unit.rent_alerts.last.old_value, precision: 0) %>)</li>
         <li>Available: <%= unit.available.strftime("%B %-d") %></li>
         <li>Lease: <%= unit.lease_months %> months</li>
         <li>Beds: <%= unit.beds %></li>
@@ -43,14 +41,13 @@
   <% end %>
 <% end %>
 
-<% if @available_alerts.present? %>
+<% if @available_changed_units.present? %> 
   <h2>Available date changed</h2>
-  <% @available_alerts.each do |alert| %>
-    <% unit = alert.unit %>
+  <% @available_changed_units.each do |unit| %>
     <div class="unit">
       <h3><%= unit.building.name %> unit <%= unit.name %></h3>
       <ul>
-        <li>Available: <%= unit.available.strftime("%B %-d") %> (was <%= alert.old_value.strftime("%B %-d") %>)</li>
+        <li>Available: <%= unit.available.strftime("%B %-d") %> (was <%= unit.available_alerts.last.old_value.strftime("%B %-d") %>)</li>
         <li>Rent: <%= number_to_currency(unit.rent, precision: 0) %></li>
         <li>Lease: <%= unit.lease_months %> months</li>
         <li>Beds: <%= unit.beds %></li>

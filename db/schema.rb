@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705233107) do
+ActiveRecord::Schema.define(version: 20161001013941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,20 +64,6 @@ ActiveRecord::Schema.define(version: 20160705233107) do
   end
 
   add_index "rent_alerts", ["unit_id"], name: "index_rent_alerts_on_unit_id", using: :btree
-
-  create_table "scraped_listings", force: :cascade do |t|
-    t.string   "unit_name"
-    t.integer  "rent"
-    t.date     "available"
-    t.integer  "beds"
-    t.integer  "square_feet"
-    t.integer  "lease_months"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "building_name"
-    t.string   "address"
-    t.string   "website"
-  end
 
   create_table "units", force: :cascade do |t|
     t.string   "name"

@@ -1,10 +1,22 @@
 require 'rails_helper'
 
-RSpec.describe UpdateUnitWorker do
-  describe ".perform" do
-    Given(:worker) { UpdateUnitWorker.new }
-    Given(:scraped_listing) { FactoryGirl.create(:scraped_listing, building_name: building_name, unit_name: unit_name) }
-    When { worker.perform(scraped_listing.id) }
+RSpec.describe ScrapedListingProcessor do
+  describe ".process" do
+    Given(:attrs) do
+      {
+        unit_name: unit_name,
+        building_name: building_name,
+        rent: 1000,
+        available: "2016-05-24",
+        beds: 1,
+        square_feet: 500,
+        lease_months: 12,
+        address: "1 First St.",
+        website: "www.sweetapartment.org"
+      }
+    end
+
+    When { ScrapedListingProcessor.process(attrs) }
 
     context "when building exists" do
       Given(:building) { FactoryGirl.create(:building) }

@@ -20,15 +20,15 @@ RSpec.describe Scraper::LoftsScraper, type: :model do
         end
       end
     end
-    When(:scraped_listings) { Scraper::LoftsScraper.scrape }
-    Then { scraped_listings.length == 3 }
-    And { scraped_listings.first.class == ScrapedListing }
-    And { scraped_listings.first.building_name == "Lofts at 707 Tenth" }
-    And { scraped_listings.first.unit_name == "0611" }
-    And { scraped_listings.first.rent == 1872 }
-    And { scraped_listings.first.available == Date.new(2016,05,26) }
-    And { scraped_listings.first.beds == 0 }
-    And { scraped_listings.first.square_feet == 597 }
-    And { scraped_listings.first.lease_months == 13 }
+    When(:result) { Scraper::LoftsScraper.scrape }
+    Then { result.length == 3 }
+    And { result.first.is_a? Unit }
+    And { result.first.building_name == "Lofts at 707 Tenth" }
+    And { result.first.name == "0611" }
+    And { result.first.rent == 1872 }
+    And { result.first.available == Date.new(2016,05,26) }
+    And { result.first.beds == 0 }
+    And { result.first.square_feet == 597 }
+    And { result.first.lease_months == 13 }
   end
 end

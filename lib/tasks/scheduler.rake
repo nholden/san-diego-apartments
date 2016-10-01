@@ -63,13 +63,6 @@ task :scrape_vantage_pointe => :environment do
   puts "Done running workers on Vantage Pointe listings."
 end
 
-task :delete_scraped_listings => :environment do
-  puts "Deleting #{ScrapedListing.count} scraped listings."
-  worker = DeleteScrapedListingsWorker.new
-  worker.perform
-  puts "Done deleting. #{ScrapedListing.count} scraped listings remaining."
-end
-
 task :send_hourly_alert_email => :environment do
   puts "Checking for new alerts."
   if NewUnitAlert.units_from_last_hour.present? || RentAlert.units_from_last_hour.present? || AvailableAlert.units_from_last_hour.present?

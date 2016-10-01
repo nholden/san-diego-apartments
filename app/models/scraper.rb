@@ -1,7 +1,7 @@
 class Scraper
   def self.scrape
     raw_listings.map do |raw_listing|
-      ScrapedListing.create(
+      ScrapedListingProcessor.process(
         building_name: building_name,
         address:       address,
         website:       website,

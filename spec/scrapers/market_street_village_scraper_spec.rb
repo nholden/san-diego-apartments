@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Scraper::MarketStreetVillageScraper, type: :model do
+RSpec.describe MarketStreetVillageScraper, type: :model do
   describe ".scrape" do
     Given(:sample_page) { File.open('./spec/pages/market_street_village.html', 'r') }
-    Given { stub_request(:get, Scraper::MarketStreetVillageScraper::LISTINGS_URL).to_return(body: sample_page) }
-    When(:result) { Scraper::MarketStreetVillageScraper.scrape }
+    Given { stub_request(:get, MarketStreetVillageScraper::LISTINGS_URL).to_return(body: sample_page) }
+    When(:result) { MarketStreetVillageScraper.scrape }
     Then { result.length == 12 }
     And { result.first.is_a? Unit }
     And { result.first.building_name == "Market Street Village" }

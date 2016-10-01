@@ -1,4 +1,4 @@
-class Scraper::CamdenTuscanyScraper < Scraper
+class CamdenTuscanyScraper < BaseScraper
   LISTINGS_URL = "https://www.camdenliving.com/san-diego-ca-apartments/camden-tuscany/apartments"
 
   private

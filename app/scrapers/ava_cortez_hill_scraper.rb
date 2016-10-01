@@ -1,4 +1,4 @@
-class Scraper::AvaCortezHillScraper < Scraper
+class AvaCortezHillScraper < BaseScraper
   LISTINGS_URL = "https://api.avalonbay.com/json/reply/ApartmentSearch?communityCode=CA060"
 
   private

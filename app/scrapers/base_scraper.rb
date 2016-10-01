@@ -1,4 +1,4 @@
-class Scraper
+class BaseScraper
   def self.scrape
     raw_listings.map do |raw_listing|
       ScrapedListingProcessor.process(

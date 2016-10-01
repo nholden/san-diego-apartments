@@ -1,4 +1,4 @@
-class Scraper::LoftsScraper < Scraper
+class LoftsScraper < BaseScraper
   LISTINGS_URL = "http://www.thesandiegolofts.com/Apartments/module/property_info/property%5Bid%5D/72603/launch_check_availability/1/"
   AVAILABILITY_URL_BASE = "http://www.thesandiegolofts.com/?module=check_availability&property[id]=72603&action=view_unit_spaces&property_floorplan[id]="
 

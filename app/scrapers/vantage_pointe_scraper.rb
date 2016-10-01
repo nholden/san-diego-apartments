@@ -1,18 +1,18 @@
-class Scraper::MarketStreetVillageScraper < Scraper
-  LISTINGS_URL = "http://www.equityapartments.com/san-diego/downtown-san-diego/market-street-village-apartments?ilsid=93"
+class VantagePointeScraper < BaseScraper
+  LISTINGS_URL = "http://www.equityapartments.com/san-diego/downtown-san-diego/vantage-pointe-apartments?ilsid=93"
 
   private
 
   def self.building_name
-    "Market Street Village"
+    "Vantage Pointe"
   end
 
   def self.address
-    "699 14th Street"
+    "1281 9th Avenue"
   end
 
   def self.website
-    "http://www.equityapartments.com/san-diego/downtown-san-diego/market-street-village-apartments"
+    "http://www.equityapartments.com/san-diego/downtown-san-diego/vantage-pointe-apartments"
   end
 
   def self.page

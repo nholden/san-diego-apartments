@@ -18,14 +18,20 @@ RSpec.describe Recipient, type: :model do
       Given(:recipient_params) { recipient.attributes }
       Given(:new_first_name) { "Bob" }
       Given { recipient_params["first_name"] = new_first_name }
-      When { Recipient.subscribe_or_update(recipient_params) }
+
+      When(:result) { Recipient.subscribe_or_update(recipient_params) }
+
       Then { Recipient.find(recipient.id).first_name == new_first_name }
+      And  { result == recipient }
     end
 
     context "when unsubscribed" do
       Given(:recipient) { FactoryGirl.create(:recipient, unsubscribed_at: 1.minute.ago) }
-      When { Recipient.subscribe_or_update(recipient.attributes) }
+
+      When(:result) { Recipient.subscribe_or_update(recipient.attributes) }
+
       Then { Recipient.find(recipient.id).unsubscribed_at.nil? }
+      And  { result == recipient }
     end
   end
 

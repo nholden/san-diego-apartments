@@ -7,13 +7,11 @@ class Recipient < ActiveRecord::Base
 
   def self.subscribe_or_update(recipient_params)
     if recipient = Recipient.find_by_email(recipient_params["email"])
-      recipient.update_attributes(recipient_params)
-      recipient.unsubscribed_at = nil
+      recipient.update recipient_params.merge(unsubscribed_at: nil)
+      recipient
     else
-      recipient = Recipient.new(recipient_params)
-      recipient.token = generate_token
+      Recipient.create recipient_params.merge(token: generate_token)
     end
-    recipient.save
   end
 
   def self.generate_token
